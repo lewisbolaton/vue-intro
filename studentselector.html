@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input
+        type="radio"
+        id="male"
+        name="gender"
+        value="m"
+
+        @change="filterChanged($event.target.value)">
+      <label for="male">Male</label>
+      <input
+        type="radio"
+        id="female"
+        name="gender"
+        value="f"
+
+        @change="filterChanged($event.target.value)">
+      <label for="female">Female</label><br>
+      <input
+        type="radio"
+        id="all"
+        name="gender"
+        value="a"
+        checked
+
+        @change="filterChanged($event.target.value)">
+      <label for="all">All</label><br>
+
+    <!--
+    <div>
+      <span>Mary Hopkins</span>
+      <button>Reverse</button>
+    </div>
+    <div>
+      <span>Issei Kaneki</span>
+      <button>Reverse</button>
+    </div>
+    <div>
+      <span>John Mann</span>
+      <button>Reverse</button>
+    </div>
+    -->
+      <student
+        v-for="student in students"
+        :key="student.id"
+        v-if="displayStudent(student.gender)"
+
+        :id="student.id"
+        :name="student.name"
+        :gender="student.gender"
+
+        @reverseclicked="reverseById">
+      </student>
+    </div>
+    <script src="studentselector.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Vue Introduction</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p :style="color">{{ text }}</p>
+      <button @click="changeText">Click me to change text</button>
+      <br>
+      <label for="color">Text Color</label>
+      <input type="text" @input="changeColor($event.target.value)" />
+      <p>{{ roloc }} :roloC</p>
+    </div>
+    <script src="titlechanger.js"></script>
+  </body>
+</html>
